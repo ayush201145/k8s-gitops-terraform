@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: microservice-gitops-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/ayush201145/devops-k8s-gitops-terraform.git'
+    targetRevision: HEAD
+    path: helm/
+    helm:
+      valueFiles:
+        - values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: production
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
