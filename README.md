@@ -1,5 +1,8 @@
 # Production Kubernetes Cluster with GitOps (IaC & ArgoCD)
 
+
+![Production Kubernetes Cluster with GitOps (IaC & ArgoCD) Hero Dashboard](docs/screenshots/hero_dashboard.png)
+
 Multi-environment cloud infrastructure fully provisioned via Terraform on AWS EKS, with microservices deployed continuously via ArgoCD following GitOps best practices.
 
 ## Architecture
